@@ -1,0 +1,241 @@
+*{
+	margin: 0;
+	padding: 0;
+	font-family: "helvetica"}
+	/* los detalles generales del estilo de la pagina */
+
+html{height: 100%;}
+
+body{
+	min-height: 100%;
+	background-image: url("../img/fondo.png");
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: 50% 50%;
+	background-attachment: fixed;
+	/* le damos el estilo al cuerpo de la pagina */
+}
+
+.header{
+	grid-area: header;
+	background-image: url("../img/header.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: 50% 200%;
+	background-attachment: fixed;
+	/* le damos estilo al encabezado de la pagina */
+}
+h1{
+	text-align: center;
+	font-size: 60px;
+	line-height: 120px;
+	color: white;
+	text-shadow: 3px 3px black;
+	/* le damos estilo a el titulo de la empresa "cachureando"  */
+}	
+.navbar{
+	grid-area: navbar;
+	text-align: center;
+	background: wheat;
+	border: 2px solid black;
+		/* le damos estilo a la barra de navegación */
+}
+nav ul li{
+	display: inline;
+	/* hacemos que la barra de navegación sea horizontal */
+}
+nav ul li a{
+	text-decoration: none;
+	color: black;
+	/* le damos estilo a las palabras de la barra de navegación */
+}
+a:hover{
+	padding: 1px;
+	background: darkred;
+	color: white;
+	/* creamos un hover para la barra de navegación para que sea interactiva cuando el cursor se pone sobre las palabras
+	 correspondientes a las paginas */
+}
+h2{
+	color: darkred;
+	font-size: 40px;
+	text-shadow: 2px 2px black;
+	text-align: center;
+	margin: 10px;
+	/* le damos estilo a las palabras correspondientes a la descripción de la categoria */
+}
+.contenido{grid-area: contenido;}
+
+.imagen{
+	border: 3px solid black;
+	height: 250px;
+	width: 200px;
+	float: left;
+}
+
+.cat1{background-image: url("../img/foto1.png");
+	background-size: cover;}
+.cat2{background-image: url("../img/foto2.png");
+	background-size: cover;}
+.cat3{background-image: url("../img/foto3.png");
+	background-size: cover;}
+.cat4{background-image: url("../img/foto4.png");
+	background-size: cover;}
+.cat5{background-image: url("../img/foto5.png");
+	background-size: cover;}
+.cat6{background-image: url("../img/foto6.png");
+	background-size: cover;}
+.cat7{background-image: url("../img/foto7.png");
+	background-size: cover;}
+.cat8{background-image: url("../img/foto8.png");
+	background-size: cover;}
+.cat9{background-image: url("../img/foto9.png");
+	background-size: cover;}
+
+/* agregamos las imagenes al catalogo */
+
+.img{
+	height: 250px;
+	width: 200px;
+	float: left;
+	margin: 25px;
+	text-align: center;
+	color: yellow;
+	text-shadow: 2px 2px black;
+
+	/* le damos tamaño a las imagenes del catalogo */
+}
+.footer{
+	grid-area: footer;
+	text-align: center;
+	font-size: 12px;
+	color: black;
+	background: wheat;
+	/* le damos diseño al pie de pagina */
+}
+@media (min-width:320px){
+	/* nuevamente usamos el media para que la pagina sea responsiva y se adapte a las diferentes resoluciones */
+	.contenedor{
+		display: grid;
+		grid-template:
+		"header"     5%
+		"navbar"     .8%
+		"contenido"  auto
+		"footer"     1%
+		/100%;}
+
+	h1{
+		font-size: 40px;
+		line-height: 120px;
+		text-shadow: 3px 3px black;}	
+	
+	.footer{
+		font-size: 10px;}
+}
+
+
+@media (min-width:768px){
+	
+	.contenedor{
+		grid-template:
+		"header"     10%
+		"navbar"     1.5%
+		"contenido"  auto
+		"footer"     2.5%
+		/100%;}
+}
+
+@media (min-width:1024px){
+	
+	.contenedor{
+		grid-template:
+		"header   header     header"    10%
+		"navbar   navbar     navbar"    1.5%
+		"sidebar1 contenido  sidebar2"  auto
+		"footer   footer     footer"    2%
+		/25%       50%      25%;}
+
+	.sidebar1{
+		grid-area: sidebar1;
+		background-image: url("../img/borde1.png");
+		background-repeat: space;
+		background-size: 90%;
+		background-position: 90%;}
+
+	.sidebar2{
+		grid-area: sidebar2;
+		background-image: url("../img/borde2.png");
+		background-repeat: space;
+		background-size: 90%;
+		background-position: -90%;}
+
+	.footer{
+		font-size: 12px;}
+}
+
+@media (min-width:1440px){
+	
+	.contenedor{
+		grid-template:
+		"header   header     header"    15%
+		"navbar   navbar     navbar"    2.5%
+		"sidebar1 contenido  sidebar2"  auto
+		"footer   footer     footer"    5%
+		/22.5%       55%      22.5%;}
+
+	h1{
+		font-size: 60px;
+		line-height: 140px;
+		text-shadow: 5px 5px black;	}
+	
+	.navbar{
+		font-size: 22px;}
+	h2{
+		font-size: 45px;}
+	.img{
+		font-size: 22px;}
+
+	.sidebar1{
+		background-size: 90%;
+		background-position: 90%;}
+
+	.sidebar2{
+		background-size: 90%;
+		background-position: -90%;}
+
+	.footer{
+		margin-top: 20px;
+		font-size: 15px;}
+}
+
+@media (min-width:2560px){
+	.contenedor{
+		grid-template:
+		"header   header     header"    20%
+		"navbar   navbar     navbar"    2.5%
+		"sidebar1 contenido  sidebar2"  auto
+		"footer   footer     footer"    6%
+		/22.5%       55%      22.5%;}
+
+	h1{
+		font-size: 100px;
+		line-height: 180px;
+		text-shadow: 3px 3px black;	}
+	
+	.navbar{
+		font-size: 33px;}
+	h2{
+		font-size: 80px;}
+	.img{
+		font-size: 40px;
+		height: 400px;
+		width: 350px;
+		margin-left: 80px;}
+	.imagen{
+		height: 400px;
+		width: 350px;}
+
+	.footer{
+		margin-top: 50px;
+		font-size: 30px;}
+}

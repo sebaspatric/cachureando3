@@ -1,0 +1,268 @@
+*{
+	margin: 0;
+	padding: 0;
+	font-family: "helvetica"
+	/* los detalles generales del estilo de la pagina */
+}
+
+html{
+	height: 100%;
+}
+body{
+	min-height: 100%;
+	background-image: url("../img/fondo.png");
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: 50% 50%;
+	background-attachment: fixed;
+	/* le damos el estilo al cuerpo de la pagina */
+}
+.header{
+	grid-area: header;
+	background-image: url("../img/header.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: 50% 200%;
+	background-attachment: fixed;
+	/* le damos estilo al encabezado de la pagina */
+}
+h1{
+	text-align: center;
+	margin: 0;
+	font-size: 40px;
+	line-height: 140px;
+	color: white;
+	text-shadow: 3px 3px black;
+	/* le damos estilo a el titulo de la empresa "cachureando"  */
+}	
+.navbar{
+	grid-area: navbar;
+	text-align: center;
+	background: wheat;
+	border: 2px solid black;
+
+	/* le damos estilo a la barra de navegación */
+}
+nav ul li{
+	display: inline;
+	/* hacemos que la barra de navegación sea horizontal */
+}
+nav ul li a{
+	text-decoration: none;
+	color: black;
+	/* le damos estilo a las palabras de la barra de navegación */
+}
+a:hover{
+	padding: 1px;
+	background: darkred;
+	color: white;
+	/* creamos un hover para la barra de navegación para que sea interactiva cuando el cursor se pone sobre las palabras
+	 correspondientes a las paginas */
+}
+.sidebar{
+	grid-area: sidebar;
+	/* usamos el grid para que aparezcan las imagenes del catalogo en el inicio */
+}
+#galeria{
+	display: flex;
+	height: 135px;
+	width: 320px;
+	/* fijamos un tamaño para las imagenes que apareceran en el inicio */
+}
+#galeria img{
+	width: 0px;
+	flex-grow: .5;
+	object-fit: cover;
+	opacity: 0.7;
+	transition: .8s;
+	/* configuramos el diseño de las imagenes que apareceran en el inicio */
+}
+#galeria img:hover{
+	cursor: pointer;
+	width: 100px;
+	opacity: 1;
+	filter: contrast(120%);
+	/* hacemos que las imagenes sean interactivas con el cursor */
+}
+.contenido{
+	grid-area: contenido;
+	text-align: center;
+	font-size: 20px;
+	color: yellow;
+	text-shadow: 2px 2px black;
+	/* le damos diseño, las centramos y le damos un tamaño a las imagenes del grid */
+}
+h2{
+	color: darkred;
+	font-size: 40px;
+	text-shadow: 2px 2px black;
+	text-align: center;
+	/* le damos diseño a las letras que aparecen en el inicio las cuales corresponden a la descripción de la empresa */
+}
+.contenido p{
+	padding: 25px;
+	text-align: justify;
+	text-shadow: 2px 2px black;
+}
+.contenido strong{
+	font-size: 30px;
+	text-shadow: 2px 2px black;
+}
+
+.footer{
+	grid-area: footer;
+	text-align: center;
+	font-size: 10px;
+	color: black;
+	background: wheat;
+	/* le damos diseño al pie de pagina */
+}
+.contenedor{
+	display: grid;
+	grid-template:
+	"header " 20%
+	"navbar " 3%
+	"contenido "   auto
+	"sidebar" 20%
+	"footer " 4%
+	/100%;
+}
+@media (min-width:375px){ 
+	/* finalmente le damos usamos media para darle responsividad a la pagina para que esta funcione pen diferentes resoluciones. 
+	  */
+	
+	#galeria{
+		height: 125px;
+		width: 375px;}
+}
+@media (min-width:425px){
+	
+	#galeria{
+		height: 125px;
+		width: 425px;}
+
+}
+@media (min-width:768px){
+
+	.contenedor{
+		grid-template:
+		"header " 20%
+		"navbar " 3%
+		"contenido "   auto
+		"sidebar" 35%
+		"footer " 5%
+		/100%;}
+	
+	#galeria{
+		height: 160px;
+		width: 500px;
+		margin-left: 125px;}
+
+	.footer{
+		font-size: 12px;}
+
+}
+@media (min-width:1024px){
+	.contenedor{
+		display: grid;
+		grid-template:
+		"header " 20%
+		"navbar " 3%
+		"contenido "   auto
+		"sidebar" 35%
+		"footer " 4%
+		/100%;}
+
+	.contenido strong{
+		font-size: 45px;
+		text-shadow: 6px 6px black;}
+		
+	#galeria{
+		height: 180px;
+		width: 750px;
+		margin-left: 140px;}
+
+}
+@media (min-width:1440px){
+	
+	.contenedor{
+		grid-template:
+		"header " 15%
+		"navbar " 3%
+		"contenido "   auto
+		"sidebar" 40%
+		"footer " 5%
+		/100%;}	
+
+	h1{
+		font-size: 60px;
+		line-height: 140px;
+		text-shadow: 5px 5px black;}	
+	
+	nav{font-size: 20px;}
+	
+	h2{
+	font-size: 50px;
+	text-shadow: 2px 2px black;
+	margin-top: 20px;}
+
+	.contenido p{
+		padding: 50px;
+		font-size: 30px;
+		text-shadow: px 4px black;}
+
+	.contenido strong{
+		font-size: 45px;
+		text-shadow: 6px 6px black;}
+
+	#galeria{
+		height: 300px;
+		width: 1050px;
+		margin-left: 200px;
+		margin-top: 50px}
+
+	#galeria img:hover{
+		width: 300px;
+		opacity: 1;
+		filter: contrast(120%);}
+
+	.footer{
+		font-size: 19px;}
+}
+
+
+@media (min-width:2560px){
+	h1{
+		font-size: 140px;
+		line-height: 240px;
+		text-shadow: 5px 5px black;
+	}	
+	nav{font-size: 40px;}
+	
+	h2{
+		font-size: 140px;
+		text-shadow: 4px 4px black;
+		margin-top: 100px;}
+
+	.contenido p{
+		padding: 200px;
+		font-size: 45px;}
+	
+	.contenido strong{
+		font-size: 100px;
+		text-shadow: 8px 8px black;}
+
+	#galeria{
+		height: 600px;
+		width: 2000px;
+		margin-left: 450px;
+		margin-top: 100px}
+
+	#galeria img:hover{
+		width: 350px;
+		opacity: 1;
+		filter: contrast(120%);}
+
+	.footer{
+		font-size: 40px;}
+}

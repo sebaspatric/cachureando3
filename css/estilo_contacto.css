@@ -1,0 +1,236 @@
+*{
+	margin: 0;
+	padding: 0;
+	font-family: "helvetica"
+	/* los detalles generales del estilo de la pagina */
+}
+
+html{height: 100%;}
+
+body{
+	min-height: 100%;
+	background-image: url("../img/fondo.png");
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: 50% 50%;
+	background-attachment: fixed;
+	/* le damos tamaño a las imagenes del catalogo */
+}
+.header{
+	grid-area: header;
+	background-image: url("../img/header.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: 50% 200%;
+	background-attachment: fixed;
+		/* le damos estilo al encabezado de la pagina */
+}
+
+h1{
+	text-align: center;
+	font-size: 60px;
+	line-height: 120px;
+	color: white;
+	text-shadow: 3px 3px black;
+	/* le damos estilo a el titulo de la empresa "cachureando"  */
+}	
+.navbar{
+	grid-area: navbar;
+	text-align: center;
+	background: wheat;
+	border: 2px solid black;
+		/* le damos estilo a la barra de navegación */
+}
+nav ul li{
+	display: inline;
+		/* hacemos que la barra de navegación sea horizontal */
+}
+nav ul li a{
+	text-decoration: none;
+	color: black;
+		/* le damos estilo a las palabras de la barra de navegación */
+}
+a:hover{
+	padding: 1px;
+	background: darkred;
+	color: white;
+		/* creamos un hover para la barra de navegación para que sea interactiva cuando el cursor se pone sobre las palabras
+	 correspondientes a las paginas */
+}
+h2{
+	color: darkred;
+	font-size: 40px;
+	text-shadow: 2px 2px black;
+	text-align: center;
+	margin: 10px;
+	/* le damos diseños a la palabra "Contacto" */
+}
+.contenido{
+	grid-area: contenido;
+}
+form{
+	text-align: center;
+	font-size: 40px;
+	color: rgba(151, 44, 11, 1.0);
+	text-shadow: 2px 2px black;
+	margin-top: 20px;
+	margin: 0;
+	color: yellow;
+	text-align: center;
+	border: none;
+	font-size: 20px;
+	/* le damos diseño a la caja de contacto */
+}
+textarea{
+	resize: none;
+}
+input{
+	font-size: 20px;
+}
+p{
+	/* margen al texto de la ubicación */
+	margin-top: 30px;
+}
+#img_ubicacion{
+	/* agregamos la imagen de la ubicación junto con las dimensiones */
+	border: 2px solid black;
+	height: 350px;
+	width: 500px;
+	margin:30px;
+	background-image: url("../img/ubicacion.png");
+	background-size: cover;
+}
+.footer{
+	/* le damos diseño al pie de pagina */
+	grid-area: footer;
+	text-align: center;
+	font-size: 12px;
+	color: black;
+	background: wheat;
+}
+
+@media (min-width:320px){
+	/* usamos el media para que la pagina sea responsiva y se adapte a las diferentes resoluciones */
+	.contenedor{
+		display: grid;
+		grid-template:
+		"header"     16%
+		"navbar"     2%
+		"contenido"  auto
+		"footer"     2.5%
+		/100%;}
+
+	h1{
+		font-size: 40px;
+		line-height: 120px;}	
+
+	#img_ubicacion{
+		height: 200px;
+		width: 250px;}
+	
+	.footer{
+		font-size: 10px;}
+}
+
+@media (min-width:768px){
+
+	.contenedor{
+		display: grid;
+		grid-template:
+		"header   header     header"    15%
+		"navbar   navbar     navbar"    2%
+		"sidebar1 contenido  sidebar2"  auto
+		"footer   footer     footer"    3%
+		/25%       50%      25%;}
+
+	.sidebar1{
+		grid-area: sidebar1;
+		background-image: url("../img/borde1.png");
+		background-repeat: space;
+		background-size: 90%;
+		background-position: 90%;}
+
+	.sidebar2{
+		grid-area: sidebar2;
+		background-image: url("../img/borde2.png");
+		background-repeat: space;
+		background-size: 90%;
+		background-position: 90%;}
+	
+	#img_ubicacion{
+		height: 300px;
+		width: 350px;}
+
+	.footer{
+		font-size: 12px;}
+}
+@media (min-width:1024px){
+	
+	.contenedor{
+		grid-template:
+		"header   header     header"    15%
+		"navbar   navbar     navbar"    2.5%
+		"sidebar1 contenido  sidebar2"  auto
+		"footer   footer     footer"    3.5%
+		/25%       50%      25%;}
+
+	h1{
+		font-size: 50px;
+		line-height: 120px;}
+
+	nav{font-size: 22px;}
+
+	h2{	font-size: 45px;}
+
+	form{font-size: 23px;}
+
+	#img_ubicacion{
+		height: 300px;
+		width: 450px;}
+	
+	.footer{font-size: 15px;}
+}
+@media (min-width:1440px){
+	
+	.contenedor{
+		grid-template:
+		"header   header     header"    15%
+		"navbar   navbar     navbar"    2.8%
+		"sidebar1 contenido  sidebar2"  auto
+		"footer   footer     footer"    3.5%
+		/25%       50%      25%;}
+
+	h1{	font-size: 60px;
+		line-height: 120px;}
+
+	nav{font-size: 24px;}
+
+	h2{	font-size: 50px;}
+
+	form{font-size: 25px;}
+
+	#img_ubicacion{
+		height: 300px;
+		width: 500px;
+		margin-left: 220px}
+	
+	.footer{font-size: 17px;}
+}
+
+@media (min-width:2560px){
+	
+	h1{
+		font-size: 75px;
+		line-height: 120px;}
+	nav{font-size: 35px;}
+
+	h2{	font-size: 65px;}
+
+	form{font-size: 35px;}
+
+	#img_ubicacion{
+		height: 600px;
+		width: 800px;
+		margin-left: 250px}
+	
+	.footer{font-size: 27px;}
